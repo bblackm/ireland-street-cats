@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {% include head.html %}
+</head>
+<body>
+  {% include header.html %}
+  <main class="main-content" id="main-content">
+    <div class="container">
+      <article class="cat-profile">
+
+        <div class="cat-profile__hero">
+          {% if page.photo %}
+            <img
+              src="{{ page.photo | relative_url }}"
+              alt="Photo of {{ page.name }}"
+              class="cat-profile__photo"
+            >
+          {% else %}
+            <div class="cat-profile__photo-placeholder" aria-hidden="true">🐱</div>
+          {% endif %}
+
+          <div class="cat-profile__intro">
+            <h1 class="cat-profile__name">{{ page.name }}</h1>
+            <p class="cat-profile__color">{{ page.color }}</p>
+            {% include badges.html cat=page %}
+          </div>
+        </div>
+
+        <section class="cat-profile__bio">
+          {{ content }}
+        </section>
+
+        <section class="cat-profile__details">
+          <h2>Details</h2>
+          <table class="details-table">
+            <tbody>
+              <tr><th scope="row">Sex</th><td>{{ page.sex | capitalize }}</td></tr>
+              <tr><th scope="row">Status</th><td>{{ page.status | capitalize }}</td></tr>
+              <tr><th scope="row">Spayed/Neutered</th><td>{{ page.fixed | default: "Unknown" }}{% if page.fixed_date %} ({{ page.fixed_date | date: "%B %-d, %Y" }}){% endif %}</td></tr>
+              <tr><th scope="row">Ear-tipped</th><td>{{ page.ear_tipped | default: "No" }}</td></tr>
+              {% if page.intake_date %}
+              <tr><th scope="row">In colony since</th><td>{{ page.intake_date | date: "%B %-d, %Y" }}</td></tr>
+              {% endif %}
+              {% if page.microchip and page.microchip != "" %}
+              <tr><th scope="row">Microchip</th><td>{{ page.microchip }}</td></tr>
+              {% endif %}
+              {% if page.zone %}
+              <tr><th scope="row">Zone</th><td>{{ page.zone }}</td></tr>
+              {% endif %}
+            </tbody>
+          </table>
+        </section>
+
+        {% if page.vaccinations and page.vaccinations.size > 0 %}
+        <section class="cat-profile__vaccinations">
+          <h2>Vaccination Record</h2>
+          <table class="vax-table">
+            <thead>
+              <tr>
+                <th scope="col">Vaccine</th>
+                <th scope="col">Date Given</th>
+                <th scope="col">Next Due</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for vax in page.vaccinations %}
+              <tr>
+                <td>{{ vax.name }}</td>
+                <td>{{ vax.date | date: "%B %-d, %Y" }}</td>
+                <td>{{ vax.due | date: "%B %-d, %Y" | default: "—" }}</td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </section>
+        {% endif %}
+
+        {% if page.sponsored %}
+        <section class="cat-profile__sponsor">
+          <h2>Sponsored</h2>
+          <p>{{ page.sponsor_note }}</p>
+        </section>
+        {% endif %}
+
+        {% if page.status == "adoptable" %}
+        <section class="cat-profile__adopt">
+          <h2>Interested in Adopting {{ page.name }}?</h2>
+          <p>{{ page.name }} is looking for a loving home! <a href="{{ '/pages/sponsor.html' | relative_url }}">Learn how to adopt or sponsor a cat →</a></p>
+        </section>
+        {% endif %}
+
+        <section class="cat-profile__qr">
+          <h2>Share {{ page.name }}'s Page</h2>
+          <p>Scan or share this QR code to bring someone straight to {{ page.name }}'s profile.</p>
+          {% if page.slug %}
+            <img
+              src="{{ '/assets/qr/' | append: page.slug | append: '.png' | relative_url }}"
+              alt="QR code linking to {{ page.name }}'s page"
+              class="qr-code"
+              width="160"
+              height="160"
+            >
+          {% endif %}
+        </section>
+
+      </article>
+    </div>
+  </main>
+  {% include footer.html %}
+</body>
+</html>

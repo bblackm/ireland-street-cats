@@ -1,0 +1,20 @@
+{% assign cat = include.cat %}
+<a class="cat-card" href="{{ cat.url | relative_url }}" aria-label="Meet {{ cat.name }}">
+  {% if cat.photo %}
+    <img src="{{ cat.photo | relative_url }}" alt="Photo of {{ cat.name }}" loading="lazy">
+  {% else %}
+    <div class="cat-card__placeholder" aria-hidden="true">🐱</div>
+  {% endif %}
+  <div class="cat-card__body">
+    <h3 class="cat-card__name">{{ cat.name }}</h3>
+    {% if cat.temperament %}
+      <p class="cat-card__temperament">{{ cat.temperament }}</p>
+    {% endif %}
+    <ul class="badges badges--small">
+      {% if cat.ear_tipped %}<li class="badge badge--green">Ear-tipped</li>{% endif %}
+      {% if cat.fixed %}<li class="badge badge--green">Fixed</li>{% endif %}
+      {% if cat.vaccinations and cat.vaccinations.size > 0 %}<li class="badge badge--blue">Vaccinated</li>{% endif %}
+      {% if cat.status == "adoptable" %}<li class="badge badge--orange">Adoptable</li>{% endif %}
+    </ul>
+  </div>
+</a>

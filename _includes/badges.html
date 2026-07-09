@@ -1,0 +1,21 @@
+{% assign cat = include.cat %}
+<ul class="badges" aria-label="Cat status badges">
+  {% if cat.ear_tipped %}
+    <li class="badge badge--green">✂️ Ear-tipped</li>
+  {% endif %}
+  {% if cat.fixed %}
+    <li class="badge badge--green">✅ Spayed/Neutered</li>
+  {% endif %}
+  {% if cat.vaccinations and cat.vaccinations.size > 0 %}
+    <li class="badge badge--blue">💉 Vaccinated</li>
+  {% endif %}
+  {% if cat.status == "adoptable" %}
+    <li class="badge badge--orange">🏠 Adoptable</li>
+  {% elsif cat.status == "resident" %}
+    <li class="badge badge--cream">🐾 Colony Resident</li>
+  {% elsif cat.status == "adopted" %}
+    <li class="badge badge--green">❤️ Adopted</li>
+  {% elsif cat.status == "missing" %}
+    <li class="badge badge--red">⚠️ Missing</li>
+  {% endif %}
+</ul>

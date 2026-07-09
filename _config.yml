@@ -1,0 +1,34 @@
+title: "The Ireland Street Cats"
+description: "A community cat colony in Burlington, NC — trapped, neutered, vaccinated, and cared for by a neighbor."
+url: "https://cats-of-ireland-street.com"
+baseurl: ""
+
+# Collections
+collections:
+  cats:
+    output: true
+    permalink: /cats/:slug/
+
+# Front-matter defaults
+defaults:
+  - scope:
+      path: ""
+      type: cats
+    values:
+      layout: cat
+
+# Build settings
+markdown: kramdown
+theme: null
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+# Exclude from build
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - CLAUDE.md
+  - "*.sh"
+  - node_modules
+  - vendor
