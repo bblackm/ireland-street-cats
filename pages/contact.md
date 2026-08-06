@@ -10,7 +10,7 @@ permalink: /pages/contact.html
 
 Have a question about the colony? Spotted an un-tipped cat? Want to help or donate? We'd love to hear from you.
 
-Email us at [catsofirelandstreet@gmail.com](mailto:catsofirelandstreet@gmail.com)
+Email us at [CatsOfIrelandStreet@gmail.com](mailto:catsofirelandstreet@gmail.com)
 
 ## Colony Area
 
