@@ -1,7 +1,6 @@
 ---
 name: Mimosa
 slug: mimosa
-Alias: Kiki, Cutie Patootie
 photo: /assets/images/cats/mimosa-blue-background.png
 sex: male
 color: "Orange/White Tabby"
@@ -10,7 +9,7 @@ fixed: true
 fixed_date: 2026-07-09
 ear_tipped: true
 microchip: "981020061688042"
-intake_date: 2025-06-012
+intake_date: 2025-06-12
 vaccinations:
   - name: Rabies
     date: 2026-06-12
