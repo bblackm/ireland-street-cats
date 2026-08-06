@@ -4,11 +4,7 @@ title: Sponsor or Adopt a Cat
 permalink: /pages/sponsor.html
 ---
 
-<div class="page-header">
-  <h1>Sponsor or Adopt a Cat</h1>
-</div>
-
-<div class="content-body">
+# Sponsor or Adopt a Cat
 
 ## Sponsor a Cat
 
@@ -22,15 +18,13 @@ Some cats in our colony — particularly those that are friendlier and more soci
 
 {% assign adoptable = site.cats | where: "status", "adoptable" %}
 {% if adoptable.size > 0 %}
-  <div class="cat-grid">
-    {% for cat in adoptable %}
-      {% include cat-card.html cat=cat %}
-    {% endfor %}
-  </div>
+<div class="cat-grid">
+  {% for cat in adoptable %}
+    {% include cat-card.html cat=cat %}
+  {% endfor %}
+</div>
 {% else %}
-  <div class="callout">
-    <strong>No cats are listed as adoptable right now.</strong> Most of our colony cats are free-roaming and happy outdoors, but that can change. Check back, or <a href="{{ '/pages/contact.html' | relative_url }}">reach out</a> if you're interested in adopting a community cat in the future.
-  </div>
+**No cats are listed as adoptable right now.** Most of our colony cats are free-roaming and happy outdoors, but that can change. Check back, or [reach out]({{ '/pages/contact.html' | relative_url }}) if you're interested in adopting a community cat in the future.
 {% endif %}
 
 ## About Community Cat Adoptions
@@ -40,5 +34,3 @@ Adopting a community cat is a little different from adopting a shelter cat. Thes
 - **Socialization takes time and patience.** Some cats warm up quickly; others may always prefer minimal handling.
 - **A secure indoor environment is essential.** A cat that's used to the outdoors needs time to adjust before having any outdoor access.
 - **We'll work with you.** We want every adoption to succeed, so we'll be honest about each cat's temperament and what to expect.
-
-</div>

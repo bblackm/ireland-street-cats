@@ -4,11 +4,7 @@ title: About TNR & Our Colony Story
 permalink: /pages/about-tnr.html
 ---
 
-<div class="page-header">
-  <h1>About TNR & Our Colony Story</h1>
-</div>
-
-<div class="content-body">
+# About TNR & Our Colony Story
 
 ## What is TNR?
 
@@ -29,6 +25,7 @@ An ear tip is the single most important visual marker a community cat can have. 
 The Ireland Street colony is a group of free-roaming cats that have made their home in our Burlington, NC neighborhood. A local neighbor noticed them and began providing food, shelter, and — most importantly — veterinary care through **Burlington Animal Services**.
 
 Every cat in the colony has been:
+
 - Humanely trapped
 - Spayed or neutered at Burlington Animal Services
 - Vaccinated against rabies and FVRCP
@@ -46,6 +43,4 @@ Community cats that have lived outdoors their whole lives are often unadoptable 
 - [Alley Cat Allies](https://www.alleycat.org/) — the leading national TNR organization
 - [Best Friends Animal Society](https://bestfriends.org/) — community cat resources
 
-<a href="{{ '/pages/help.html' | relative_url }}" class="btn btn--primary mt-2">See How You Can Help →</a>
-
-</div>
+[See How You Can Help →]({{ '/pages/help.html' | relative_url }}){: .btn .btn--primary}
