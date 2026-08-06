@@ -10,7 +10,7 @@ permalink: /pages/contact.html
 
 Have a question about the colony? Spotted an un-tipped cat? Want to help or donate? We'd love to hear from you.
 
-**Contact info coming soon.** The caretaker is working on setting up a dedicated contact method. Check back shortly.
+Email us at [catsofirelandstreet@gmail.com](mailto:catsofirelandstreet@gmail.com)
 
 ## Colony Area
 
